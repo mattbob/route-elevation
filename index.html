@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<title>Route Elevation</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto|Material+Icons">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<script src="https://www.google.com/jsapi"></script>
+	</head>
+
+	<body>
+		<header>
+			<a href="#" class="logo">Route Elevation</a>
+
+			<nav>
+				<ul>
+					<li><a href="https://goo.gl/forms/0L3Y5Wbp1GPH6TD72" target="_blank">Feedback</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="app">
+			<div class="route-details">
+				<form id="form">
+					<div class="form-addresses">
+						<div class="text-field">
+							<i class="material-icons text-field__icon text-field__icon--small" tabindex="0" role="button">trip_origin</i>
+							<input tabindex="1" type="text" id="start" class="text-field__input" placeholder="Where are you starting your trip?" aria-label="Where are you starting your trip?" required minlength="3" autofocus>
+						</div>
+
+						<i class="material-icons" id="address-swap" aria-hidden="true">import_export</i>
+
+						<div class="text-field">
+							<i class="material-icons text-field__icon" tabindex="0" role="button">place</i>
+							<input tabindex="2" type="text" id="end" class="text-field__input" placeholder="What's your destination?" aria-label="What's your destination?" required minlength="3">
+						</div>
+
+						<a id="route-add" href="#" style="display: none;">
+							<i class="material-icons" tabindex="0" role="button">add_circle_outline</i>
+							<span>Add a destination</span>
+						</a>
+					</div>
+
+					<button type="submit" id="submit" class="button" tabindex="3">
+						Find Elevations
+					</button>
+				</form>
+
+				<div class="route-details__detail" id="route-details-distance"></div>
+				<div class="route-details__detail" id="route-details-duration"></div>
+
+				<div class="route-elevation">
+					<div id="elevation_chart"></div>
+				</div>
+			</div>
+
+			<div id="map"></div>
+		</div><!-- .app -->
+
+		<script src="assets/js/main.min.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh7n6Hc60S4gtmf6tbTLYn_uXcTCMpYxA&libraries=places,visualization&callback=initMap"></script>
+	</body>
+</html>
