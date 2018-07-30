@@ -53,22 +53,28 @@ header nav a:hover {
 	color: #4285F4;
 }
 
-.app {
-	position: absolute;
-	top: 3.4rem;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	overflow: hidden;
-	display: grid;
-	grid-template-columns: [sidebar] 390px [map] auto;
+@media screen and (min-width: 420px) {
+	.app {
+		position: absolute;
+		top: 3.4rem;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: grid;
+		grid-template-columns: [sidebar] 360px [map] auto;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.app {
+		grid-template-columns: [sidebar] 390px [map] auto;
+	}
 }
 
 .route-details {
 	display: flex;
 	flex-direction: column;
 	background-color: #FFF;
-	overflow: hidden;
 }
 
 #form {
@@ -193,10 +199,22 @@ header nav a:hover {
 	font: 400 13px Roboto, sans-serif;
 }
 
+#map {
+	width: 100%;
+	height: 400px;
+}
+
+@media screen and (min-width: 420px) {
+	#map {
+		height: auto;
+	}
+}
+
 .route-elevation {
 	flex-grow: 1;
 	position: relative;
 	margin-top: 40px;
+	min-height: 150px;
 }
 
 .route-elevation--expanded {
@@ -224,21 +242,28 @@ header nav a:hover {
 }
 
 #chart_expand {
-	color: #FFF;
-	text-decoration: none;
-	position: absolute;
-	z-index: 1;
-	right: -1px;
-	top: -12px;
-	padding: 3px 10px;
-	border-radius: 12px 12px 0;
-	background-color: #3e68ce;
-	line-height: 1.2rem;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 500;
-	font-size: .8rem;
-	transition: all .2s ease;
+	display: none;
+}
+
+@media screen and (min-width: 900px) {
+	#chart_expand {
+		display: block;
+		color: #FFF;
+		text-decoration: none;
+		position: absolute;
+		z-index: 1;
+		right: -1px;
+		top: -12px;
+		padding: 3px 10px;
+		border-radius: 12px 12px 0;
+		background-color: #3e68ce;
+		line-height: 1.2rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 500;
+		font-size: .8rem;
+		transition: all .2s ease;
+	}
 }
 
 #chart_expand:hover {
