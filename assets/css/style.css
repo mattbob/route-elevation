@@ -142,9 +142,12 @@ header nav a:hover {
 }
 
 .route-details__detail {
-	margin: 20px 15px;
 	display: flex;
 	justify-content: space-between;
+}
+
+.route-details__detail.visible {
+	margin: 20px 15px 0;
 }
 
 .route-details__detail__name {
@@ -213,7 +216,10 @@ header nav a:hover {
 .route-elevation {
 	flex-grow: 1;
 	position: relative;
-	margin-top: 40px;
+}
+
+.route-elevation.visible {
+	margin: 20px;
 	min-height: 150px;
 }
 
@@ -229,7 +235,6 @@ header nav a:hover {
 #elevation_chart {
 	visibility: hidden;
 	padding: 10px;
-	margin: 20px 15px;
 	border: 1px solid #CCC;
 	border-radius: 3px;
 	position: absolute;
